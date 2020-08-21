@@ -6,12 +6,12 @@
 .postBox {
   background-color: white;
   height: auto;
-  width: 400px;
-  margin-bottom: 100px;
+  width: 600px;
+  border-radius: 15px;
 }
 .proiflePic {
-  height: 50px;
-  width: 50px;
+  height: 60px;
+  width: 60px;
   border-radius: 50%;
 }
 .profileName {
@@ -35,17 +35,35 @@
   font-size: 1.5rem !important;
 }
 .abc {
-  padding: 10px;
   display: flex;
+  /* flex-direction: row; */
+  padding: 10px;
+  position: relative;
   justify-content: space-around;
 }
 .allActionIcons {
-  margin-left: 30px;
+  /* margin-left: 30px;
   top: 118%;
   position: absolute;
-  z-index: 10;
+  z-index: 10; */
+  /* margin-right: 65px;
+  position: absolute; */
+  /* top: 95%; */
+  /* margin-top: -2.5%;
+  z-index: 10; */
+  background-color: #fff;
+  position: absolute;
+  bottom: 40px;
+  left: 0px;
+  padding: 7px;
+  border-radius: 25px;
+  /* margin-top: -2.5%; */
+  /* bottom: 50% */
 }
 .like{
-  
   position: relative;
+}
+
+.likeData{
+  font-size: 15px;
 }
