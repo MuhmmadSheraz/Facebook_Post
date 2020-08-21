@@ -7,6 +7,7 @@
   background-color: white;
   height: auto;
   width: 400px;
+  margin-bottom: 100px;
 }
 .proiflePic {
   height: 50px;
@@ -34,7 +35,17 @@
   font-size: 1.5rem !important;
 }
 .abc {
-  padding:10px;
+  padding: 10px;
   display: flex;
   justify-content: space-around;
+}
+.allActionIcons {
+  margin-left: 30px;
+  top: 118%;
+  position: absolute;
+  z-index: 10;
+}
+.like{
+  
+  position: relative;
 }
