@@ -9,10 +9,11 @@ import "../../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 let Post = (props) => {
   let { postData } = props;
   let { likeFun } = props;
-  
+  console.log(likeFun);
+  console.log(postData.likes.length);
   const [isShown, setIsShown] = useState(false);
   const [isLike, setIslike] = useState(false);
-  const [isRespond, setRespond] = useState(false);
+  const [isRespond, setRespond] = useState(true);
   const [emojis] = useState([
     "like",
     "love",
@@ -22,31 +23,22 @@ let Post = (props) => {
     "haha",
     "sad",
   ]);
-  // useEffect(() => {
-  //   if (postData.likes.length == 0) {
-  //     setRespond(false);
-  //   } else {
-  //     setRespond(true);
-  //   }
-  // }, []);
   useEffect(() => {
     if (postData.likes.length == 0) {
       setRespond(false);
-      console.log(postData.likes)
-      console.log("Nai Chala")
-    } else {
-      setRespond(true);
-      console.log("Chala")
     }
-  }, [postData.likes]);
+    else{
+      setRespond(true);
+
+    }
+  }, [postData.likes.length]);
 
   let likeme = () => {
     if (isLike == true) {
-
       setIslike(false);
     } else if (isLike == false) {
       setIslike(true);
-      likeFun("Sheraz");
+      props.likeFun("Sheraz")
     }
   };
 
@@ -107,10 +99,10 @@ let Post = (props) => {
         </div>
       )}
 
-      {/* Post Action */}
       <div className="">
         <div className="container mt-3">
           <hr />
+          {/* Post Action */}
           <div className="abc my-2" onMouseLeave={() => setIsShown(false)}>
             {/* <div> */}
             {isShown && (

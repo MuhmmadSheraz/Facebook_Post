@@ -6,7 +6,7 @@
 .postBox {
   background-color: white;
   height: auto;
-  width: 600px;
+  width: auto;
   border-radius: 15px;
 }
 .proiflePic {
@@ -34,6 +34,11 @@
 .actionBtnName {
   font-size: 1.5rem !important;
 }
+.actionBtnName1 {
+  font-size: 1.5rem !important;
+  /* border: 1px solid black; */
+  color: #385898;
+}
 .abc {
   display: flex;
   /* flex-direction: row; */
@@ -42,23 +47,12 @@
   justify-content: space-around;
 }
 .allActionIcons {
-  /* margin-left: 30px;
-  top: 118%;
-  position: absolute;
-  z-index: 10; */
-  /* margin-right: 65px;
-  position: absolute; */
-  /* top: 95%; */
-  /* margin-top: -2.5%;
-  z-index: 10; */
   background-color: #fff;
   position: absolute;
   bottom: 40px;
   left: 0px;
   padding: 7px;
   border-radius: 25px;
-  /* margin-top: -2.5%; */
-  /* bottom: 50% */
 }
 .like{
   position: relative;
