@@ -9,7 +9,7 @@ import "../../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 let Post = (props) => {
   let { postData } = props;
   let { likeFun } = props;
-  
+
   const [isShown, setIsShown] = useState(false);
   const [isLike, setIslike] = useState(false);
   const [isRespond, setRespond] = useState(false);
@@ -22,31 +22,24 @@ let Post = (props) => {
     "haha",
     "sad",
   ]);
-  // useEffect(() => {
-  //   if (postData.likes.length == 0) {
-  //     setRespond(false);
-  //   } else {
-  //     setRespond(true);
-  //   }
-  // }, []);
+  
   useEffect(() => {
+    console.log("UseEffect ****");
+    console.log(postData.likes.length);
     if (postData.likes.length == 0) {
       setRespond(false);
-      console.log(postData.likes)
-      console.log("Nai Chala")
     } else {
       setRespond(true);
-      console.log("Chala")
+      console.log("Chala");
     }
-  }, [postData.likes]);
+  }, [isLike]);
 
   let likeme = () => {
+    likeFun("Sheraz");
     if (isLike == true) {
-
       setIslike(false);
     } else if (isLike == false) {
       setIslike(true);
-      likeFun("Sheraz");
     }
   };
 
@@ -90,20 +83,21 @@ let Post = (props) => {
         </div>
       </div>
       {/* Post  Data */}
-      {isRespond && (
+
+      {isRespond && isLike ? (
         <div className=" d-flex justify-content-between likeData">
-          {postData.likes &&
-          postData.likes.length &&
-          postData.likes.includes("Shiraz") ? (
-            <>
-              <div className="pl-4 ">
-                <FacebookEmoji size="xxs" type="like" /> You and 47 others
-              </div>
-              <div className="pr-4 ">8 Comments</div>
-            </>
-          ) : (
-            <div></div>
-          )}
+          <div className="pl-4 ">
+            <FacebookEmoji size="xxs" type="like" /> You, {postData.likes[0]}  and {" "}
+      { postData.likes.length-2} {" "} Others
+          </div>
+          <div className="pr-4 ">8 Comments</div>
+        </div>
+      ) : (
+        <div className=" d-flex justify-content-between likeData">
+          <div className="pl-4 ">
+      <FacebookEmoji size="xxs" type="like" />{ postData.likes[0]} and{" "}{ postData.likes.length-1}  {" "} Others
+          </div>
+          <div className="pr-4 ">8 Comments</div>
         </div>
       )}
 

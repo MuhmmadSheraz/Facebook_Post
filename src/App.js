@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "./logo.svg";
-// import Test from './Component/Test'
+import Test from "./Component/Test";
 import "./App.css";
 import Post from "./Component/view/Post";
 let obj = {
@@ -14,16 +14,20 @@ let obj = {
     "https://scontent.fkhi1-1.fna.fbcdn.net/v/t45.1600-4/cp0/q75/spS444/p526x296/117337614_6213997611453_6585092474375041064_n.jpg?_nc_cat=104&_nc_sid=67cdda&_nc_eui2=AeH2rBzukeCtGVfNFlGp8l_2gOX-MruQkDKA5f4yu5CQMjaz0KhiSf94RjJFm7UxhZebZdmLfHkOrhVp86c1KkhB&_nc_ohc=RmMq_WWlnS8AX-DimUj&_nc_ht=scontent.fkhi1-1.fna&oh=0415c8b328a83e3b2d0e8a767418f8b1&oe=5F67272B",
   ],
   createdAt: Date.now(),
-  likes: [],
+  likes: ["zain", "Ali", "kamara", "basit","Shahzain","Khalid","Asif","kashif","Rehman","Khatak","Sarfaraz","Bobby","Amira","Alisha","Furqaan","hussain","Bilal","Waleed","Sharef","Kami","Eijaz"],
 };
 let likeMe = (name) => {
-  console.log(obj.likes)
-  // obj.likes.includes(name)?obj.likes.push(name):obj.likes.splice(name.indexOf,1)
-  obj.likes.push(name)
+  if (obj.likes.includes(name)) {
+    obj.likes.splice(obj.likes.indexOf(name), 1);
+  } else {
+    obj.likes.push(name);
+  }
+  console.log(obj.likes);
 };
 function App() {
   return (
     <div className="App App-header">
+      {/* <Test/> */}
       <Post postData={obj} likeFun={likeMe} />
     </div>
   );
